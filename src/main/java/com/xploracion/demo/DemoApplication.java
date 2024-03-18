@@ -17,13 +17,29 @@ public class DemoApplication {
 
 
 	@Bean
-	public CommandLineRunner demo(UserRepository userRepository) {
+	public CommandLineRunner demo(UserRepository userRepository, RolRepository rolRepository, TaskRepository taskRepository) {
 		return (args) -> {
 			User user=new User();
-			user.setUsername("popo");
+			user.setUsername("petra");
 			user.setPassword("1234");
 			user.setIdrol(1);
 			userRepository.save(user);
+
+			Rol rol=new Rol();
+			rol.setIdrol(4);
+			rol.setDescription("otheruser2");
+			rolRepository.save(rol);
+
+			Task task=new Task();
+			task.setIduser(3);
+			task.setIdtask(5);
+			task.setTitle("popo");
+			task.setDescription("me hago encima");
+			//task.setCreate_date("2024-03-22");
+			//task.setDeadline("2024-03-31");
+			taskRepository.save(task);
+
+
 		};
 	}
 }

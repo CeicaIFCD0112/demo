@@ -20,6 +20,7 @@ public class Task {
     private String description;
     private Date create_date;
     private Date deadline;
+    private Integer iduser;
 
     public Task() {
         this.idtask = idtask;
@@ -64,5 +65,13 @@ public class Task {
 
     public void setDeadline(Date deadline) {
         this.deadline = deadline;
+    }
+
+    public Integer getIduser() {
+        return iduser;
+    }
+
+    public void setIduser(Integer iduser) {
+        this.iduser = iduser;
     }
 }
